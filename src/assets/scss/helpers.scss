@@ -1,0 +1,39 @@
+@mixin disable_select {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+@mixin flex_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex_row {
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+@mixin disable_input_caret {
+  caret-color: transparent !important;
+}
+
+@mixin full_width {
+  width: 100% !important;
+}
+
+@mixin container {
+  max-width: 940px !important;
+  width: 100% !important;
+  margin: auto !important;
+  box-sizing: border-box !important;
+}
+
+@mixin nulify-margin-x-xs {
+  @media all and (max-width: 576px) {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+}

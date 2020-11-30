@@ -1,0 +1,37 @@
+@import "../../helpers";
+
+$font-size: 18px;
+$width: auto;
+$max-width: 100%;
+$height: 45px;
+$max-height: 45px;
+$border: none;
+$background-color: rgb(230, 242, 254);
+$padding: 15px 20px;
+$color: rgb(51, 51, 51);
+$borders_radius: 5px;
+$outline: none;
+
+@mixin Input {
+  @include disable_input_caret;
+  outline: $outline;
+  border: $border;
+  max-height: $max-height;
+  //height: $height;
+}
+
+@mixin Number_input {
+  @include Input;
+}
+
+@mixin Header_number_input {
+  @include Number_input;
+}
+
+@mixin Search_panel_number_input {
+  @include Header_number_input;
+  font-size: $font-size;
+  background-color: $background-color;
+  padding: $padding;
+  color: transparentize($color, 0.3);
+}

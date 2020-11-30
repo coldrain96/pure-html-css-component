@@ -1,0 +1,84 @@
+@import "../../helpers";
+
+$font-size: 18px;
+$width: auto;
+$max-width: 45px;
+$height: 45px;
+$max-height: 100%;
+$border: none;
+$background-color: rgb(230, 242, 254);
+$padding: 15px 20px;
+$color: rgb(51, 51, 51);
+$opacity_rgba: rgba(0, 0, 0, 0);
+$borders_radius: 5px;
+$outline: none;
+
+$general_search_panel_button_size: 260px;
+
+@mixin Button {
+  outline: $outline;
+  width: $width;
+  height: $height;
+  max-height: $max-height;
+  max-width: $max-width;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin Header_button {
+  @include Button;
+}
+
+@mixin Search_panel_button {
+  @include Header_button;
+  @include flex_center;
+  @include disable_select;
+  font-size: $font-size;
+  border: $border;
+  color: $color;
+}
+
+@mixin General_search_panel_button {
+  @include Search_panel_button;
+  width: $general_search_panel_button_size;
+  justify-content: space-between !important;
+  padding: $padding;
+  overflow: hidden;
+
+  @media all and (max-width: 576px) {
+    width: auto !important;
+    min-width: auto !important;
+  }
+}
+
+@mixin Add_option_search_panel_button {
+  @include Search_panel_button;
+  width: $general_search_panel_button_size !important;
+  @include full_width;
+  padding: $padding;
+  border: solid 1px rgb(80, 105, 129);
+  background-color: $opacity_rgba;
+  border-radius: $borders_radius;
+
+  &:hover {
+    background-color: rgba(80, 105, 129, 1);
+    color: #ffffff;
+  }
+}
+
+@mixin Submit_search_panel_button {
+  @include Search_panel_button;
+  font-size: 20px;
+  min-width: 130px;
+  width: 130px;
+  background-color: rgb(94, 153, 105);
+  color: #ffffff !important;
+}
+
+@mixin Options_group_unit_search_panel_button {
+  @include Search_panel_button;
+  padding: 15px 20px;
+  background-color: rgb(194, 227, 242)
+}

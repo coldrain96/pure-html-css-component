@@ -1,0 +1,42 @@
+@import "components/header";
+
+body {
+  margin: 0;
+}
+
+* {
+  font-family: 'PT Sans', sans-serif !important;
+}
+
+.container {
+  @include container;
+}
+
+.full-width {
+  @include full_width;
+}
+
+.flex-row {
+  @include flex_row;
+}
+
+.flex-center {
+  @include flex_center;
+}
+
+.disable-select {
+  @include disable_select;
+}
+
+.disable-input-caret {
+  @include disable_input_caret;
+}
+
+.rounded {
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.nulify-margin-x-xs {
+  @include nulify-margin-x-xs;
+}
